@@ -1,0 +1,73 @@
+<h1>Le modèle binomial</h1>
+    <h2>Présentation</h2>
+    <h3>L'actif risqué</h3>
+    <p>
+        On considère une suite de variables aléatoires <strong>indépendantes et identiquement distribuées</strong>
+        (iid), définie par
+    </p>
+    <div id="X">
+        $$ \mathbb{{ '{' }}P{{ '}' }}(X_0 = u) = p = 1 - \mathbb{{ '{' }}P{{ '}' }}(X_0 = d) $$
+    </div>
+    où \(d \leq 0 \leq u\).
+
+    <p>
+        Cette suite détermine la dynamique d'un actif S, dit <strong>risqué</strong>, de la manière suivante
+    </p>
+    <div id="S">
+        $$ S_{{ '{' }}n+1{{ '}' }} = S_n(1 + X_n),\ S_0 > 0 $$
+
+    </div>
+
+    Ainsi, la valeur de S à un instant donné est un pourcentage, à la hausse ou à la baisse de sa valeur à l'intant
+    précédent.
+    
+    <p>
+        Sauf indication contraire on supposera que \( S_0 = 1 \)
+    </p>
+
+    <app-risky-asset></app-risky-asset>
+    
+    <h3>L'actif sans risque</h3>
+    <p>
+        L'actif B, dit sans risque, est modélisé par la suite <strong>déterministe</strong>
+    </p>
+
+    <div id="B">
+        $$ B_{{ '{' }}n+1{{ '}' }} = B_n(1 + r),\ B_0 > 0,\ r\geq 0 $$
+    </div>
+    Il représente un placement ou un emprunt à taux fixe sur une période \( [n,\ n + 1] \)
+
+    <h3>Options européennes</h3>
+    <h4>Options call</h4>
+    <p>
+        Un call européen de <strong>strike</strong> K, de <strong>maturité</strong> T et écrit sur le
+        <strong>sous-jacent</strong> S donne le droit à son possesseur d'acheter S au prix K à la date T.
+    </p>
+    <p>
+        La valeur à échéance d'une option call (on dit aussi option d'achat) est donnée par
+        $$
+        \begin{{ '{' }}aligned{{ '}' }}
+
+        C_{{ '{' }}K, T{{ '}' }}(S_T, T) &= \max(S_T - K, 0) \\
+        &=: (S_T - K)_+
+        \end{{ '{' }}aligned{{ '}' }}
+
+        $$
+    </p>
+
+    <p>
+        Un put européen de <strong>strike</strong> K, de <strong>maturité</strong> T et écrit sur le
+        <strong>sous-jacent</strong> S donne le droit à son possesseur de vendre S au prix K à la date T.
+    </p>
+    <p>Sa valeur à échéance est alors donnée par
+        $$
+        \begin{{ '{' }}aligned{{ '}' }}
+
+        P_{{ '{' }}K, T{{ '}' }}(S_T, T) &= \max(K - S_T, 0) \\
+        &=: (K -S_T)_+
+        \end{{ '{' }}aligned{{ '}' }}
+        $$
+    </p>
+
+    <h2>Evaluations des options européennes</h2>
+    <h3>Options call</h3>

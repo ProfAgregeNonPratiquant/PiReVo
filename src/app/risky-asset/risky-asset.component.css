@@ -1,0 +1,38 @@
+:host{
+    display:grid;
+    grid-template-columns: repeat( auto-fit, minmax(350px, 0.7fr) );
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart{
+    width:auto;
+    display: flex;
+    justify-content: center;
+}
+
+canvas{
+    display: block;
+}
+
+label{
+    padding-right: 0;
+    margin-right: 0;
+}
+.form-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    align-self: flex-end;
+}
+
+
