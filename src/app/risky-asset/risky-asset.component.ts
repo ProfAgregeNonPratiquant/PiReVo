@@ -15,7 +15,8 @@ export class RiskyAssetComponent implements OnInit {
   riskyAssetForm : FormGroup
 
   constructor(private http: HttpClient, private formBuilder: FormBuilder) { }
-  api_url = 'http://127.0.0.1:5000/pirevo'
+  //api_url = 'http://127.0.0.1:5000/pirevo'
+  api_url = 'https://khyf.pythonanywhere.com/pirevo'
   riskyAssetChart: any
   p = 0.5;
   u = 0.02;
